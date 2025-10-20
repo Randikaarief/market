@@ -38,8 +38,10 @@ Website ini merupakan platform jual beli elektronik sederhana yang memungkinkan 
 ## Screenshot Tampilan
 tampilan home
 <img width="759" height="910" alt="Screenshot 2025-10-20 221355" src="https://github.com/user-attachments/assets/1ddcca4c-3b38-4796-abeb-801b0df96520" />
+
 tampilan produk
 <img width="781" height="909" alt="Screenshot 2025-10-20 221431" src="https://github.com/user-attachments/assets/8b1cdcf9-b6dd-4f6e-8920-bd4828aa3759" />
+
 tampilan kontak
 <img width="775" height="904" alt="image" src="https://github.com/user-attachments/assets/135a3b7d-db97-4f84-a52f-f985c04fbc95" />
 
