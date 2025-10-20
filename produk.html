@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RandikaElektro - Produk</title>
+    <link rel="icon" href="image/logo.png"> 
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span>⚡</span>
+                    <span>RandikaElektro</span>
+                </div>
+                
+                <!-- Navigation Menu -->
+                <nav class="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="produk.html" class="nav-link active">Produk</a>
+                    <a href="kontak.html" class="nav-link">Kontak</a>
+                </nav>
+                
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Cari produk elektronik...">
+                    <span class="search-icon">🔍</span>
+                </div>
+                <button class="cart-btn" id="cartBtn">
+                    🛒 Keranjang
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <div class="container">
+        <div class="page-header">
+            <h1 class="page-title">Katalog Produk</h1>
+            <p class="page-subtitle">Temukan berbagai macam produk elektronik berkualitas dengan harga terbaik</p>
+        </div>
+    </div>
+
+    <!-- Products Filter -->
+    <div class="categories">
+        <div class="container">
+            <div class="category-list" id="categoryList"></div>
+        </div>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="main-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <div class="products-section">
+                    <div class="products-header">
+                        <h2 class="section-title">Semua Produk</h2>
+                        <div class="products-count" id="productsCount"></div>
+                    </div>
+                    <div class="products-grid-full" id="productsGrid"></div>
+                </div>
+
+                <!-- Cart Sidebar -->
+                <div class="cart-sidebar hidden" id="cartSidebar">
+                    <div class="cart-header">
+                        <h3 class="cart-title">Keranjang Belanja</h3>
+                        <button class="close-cart" id="closeCart">×</button>
+                    </div>
+                    <div class="cart-items" id="cartItems"></div>
+                    <div class="cart-total">
+                        <div class="total-row">
+                            <span class="total-label">Total:</span>
+                            <span class="total-price" id="totalPrice">Rp 0</span>
+                        </div>
+                        <button class="checkout-btn" id="checkoutBtn">
+                            💳 Checkout Sekarang
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>RandikaElektro</h3>
+                    <p>Toko elektronik terpercaya dengan kualitas premium dan harga terjangkau.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Menu</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="produk.html">Produk</a></li>
+                        <li><a href="kontak.html">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Kategori</h3>
+                    <ul>
+                        <li><a href="produk.html?category=TV">TV</a></li>
+                        <li><a href="produk.html?category=Sound">Sound</a></li>
+                        <li><a href="produk.html?category=AC">AC</a></li>
+                        <li><a href="produk.html?category=Kulkas">Kulkas</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 RandikaElektro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <span id="notificationMessage"></span>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script>
+        // Products page specific initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            initCategories();
+            updateCart();
+            
+            // Get category from URL parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const categoryParam = urlParams.get('category');
+            
+            if (categoryParam) {
+                selectCategory(categoryParam);
+            } else {
+                // Show all products on products page
+                displayProducts(products, document.getElementById('productsGrid'));
+                updateProductsCount(products.length);
+            }
+            
+            // Search functionality
+            document.getElementById('searchInput').addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                const filteredProducts = products.filter(product => 
+                    product.name.toLowerCase().includes(searchTerm)
+                );
+                displayProducts(filteredProducts, document.getElementById('productsGrid'));
+                updateProductsCount(filteredProducts.length);
+            });
+        });
+
+        function updateProductsCount(count) {
+            document.getElementById('productsCount').textContent = `${count} produk ditemukan`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header-content {
+        flex-wrap: wrap;
+    }
+
+    .nav-menu {
+        order: 2;
+        width: 100%;
+        justify-content: center;
+        margin: 15px 0;
+    }
+
+    .search-box {
+        order: 3;
+        width: 100%;
+        max-width: 100%;
+        margin-top: 15px;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .cart-sidebar {
+        width: 95%;
+        height: 90vh;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    .products-grid-full {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-carousel {
+        height: 400px;
+    }
+
+    .carousel-content h2 {
+        font-size: 32px;
+    }
+
+    .carousel-content p {
+        font-size: 16px;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .page-title {
+        font-size: 36px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .products-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .nav-menu {
+        gap: 15px;
+    }
+
+    .nav-link {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+
+    .page-title {
+        font-size: 28px;
+    }
+
+    .page-subtitle {
+        font-size: 16px;
+    }
+
+    .hero-carousel {
+        height: 300px;
+    }
+
+    .carousel-content {
+        padding: 20px;
+    }
+
+    .carousel-content h2 {
+        font-size: 24px;
+    }
+
+    .carousel-content p {
+        font-size: 14px;
+    }
+
+    .shop-now-btn {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+        padding: 20px;
+    }
+
+    .contact-form {
+        padding: 25px;
+    }
+
+    .cart-sidebar {
+        padding: 20px;
+    }
+}

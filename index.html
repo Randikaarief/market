@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RandikaElektro - Home</title>
+    <link rel="icon" href="image/logo.png"> 
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span>⚡</span>
+                    <span>RandikaElektro</span>
+                </div>
+                
+                <!-- Navigation Menu -->
+                <nav class="nav-menu">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="produk.html" class="nav-link">Produk</a>
+                    <a href="kontak.html" class="nav-link">Kontak</a>
+                </nav>
+                
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Cari produk elektronik...">
+                    <span class="search-icon">🔍</span>
+                </div>
+                <button class="cart-btn" id="cartBtn">
+                    🛒 Keranjang
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Carousel -->
+    <div class="container">
+        <div class="hero-carousel">
+            <div class="carousel-container" id="carouselContainer">
+                <!-- Slides will be added by JavaScript -->
+            </div>
+            <button class="carousel-nav carousel-prev" id="carouselPrev">❮</button>
+            <button class="carousel-nav carousel-next" id="carouselNext">❯</button>
+            <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+    </div>
+
+    <!-- Categories -->
+    <div class="categories">
+        <div class="container">
+            <div class="category-list" id="categoryList"></div>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <div class="main-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <!-- Products Section -->
+                <div class="products-section">
+                    <h2 class="section-title" id="sectionTitle">Produk Terpopuler</h2>
+                    <div class="products-grid" id="productsGrid"></div>
+                </div>
+
+                <!-- Cart Sidebar -->
+                <div class="cart-sidebar hidden" id="cartSidebar">
+                    <div class="cart-header">
+                        <h3 class="cart-title">Keranjang Belanja</h3>
+                        <button class="close-cart" id="closeCart">×</button>
+                    </div>
+                    <div class="cart-items" id="cartItems"></div>
+                    <div class="cart-total">
+                        <div class="total-row">
+                            <span class="total-label">Total:</span>
+                            <span class="total-price" id="totalPrice">Rp 0</span>
+                        </div>
+                        <button class="checkout-btn" id="checkoutBtn">
+                            💳 Checkout Sekarang
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2>Tentang RandikaElektro</h2>
+                <p>Kami adalah toko elektronik terpercaya yang menyediakan berbagai produk elektronik berkualitas dengan harga terbaik. Berpengalaman lebih dari 10 tahun dalam melayani kebutuhan elektronik rumah tangga.</p>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🚚</div>
+                        <h4>Gratis Pengiriman</h4>
+                        <p>Gratis ongkos kirim untuk pembelian di atas Rp 1.000.000</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h4>Garansi Resmi</h4>
+                        <p>Semua produk dilengkapi dengan garansi resmi dari distributor</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💳</div>
+                        <h4>Pembayaran Aman</h4>
+                        <p>Berbagai metode pembayaran yang aman dan terpercaya</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛠️</div>
+                        <h4>Service Center</h4>
+                        <p>Layanan purna jual dan service center yang terpercaya</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>RandikaElektro</h3>
+                    <p>Toko elektronik terpercaya dengan kualitas premium dan harga terjangkau.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Menu</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="produk.html">Produk</a></li>
+                        <li><a href="kontak.html">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Kategori</h3>
+                    <ul>
+                        <li><a href="produk.html?category=TV">TV</a></li>
+                        <li><a href="produk.html?category=Sound">Sound</a></li>
+                        <li><a href="produk.html?category=AC">AC</a></li>
+                        <li><a href="produk.html?category=Kulkas">Kulkas</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 RandikaElektro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <span id="notificationMessage"></span>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script>
+        // Home page specific initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            initCarousel();
+            initCategories();
+            filterProducts();
+            updateCart();
+            
+            // Show only 6 popular products on home page
+            const popularProducts = products.slice(0, 6);
+            displayProducts(popularProducts, document.getElementById('productsGrid'));
+        });
+    </script>
+</body>
+</html>
